@@ -1,5 +1,5 @@
 {
-  "name": "slideforge-ai-toolkit",
+  "name": "agentic-slides",
   "version": "0.1.0",
   "private": true,
   "description": "A local, schema-driven toolkit for editable PowerPoint and HTML presentations",

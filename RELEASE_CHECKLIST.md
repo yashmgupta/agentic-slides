@@ -1,6 +1,7 @@
 # Release checklist
 
-- [ ] Choose a distinct, cleared project name; “SlideForge AI” has existing GitHub/npm uses.
+- [x] Project renamed to “Agentic Slides” (repo `yashmgupta/agentic-slides`).
+- [ ] Re-check trademark/name conflicts (an unrelated npm package `agentic-slides` exists; this project is not published to npm).
 - [ ] Confirm intended owner/repository URL and obtain explicit approval before public creation.
 - [ ] Review each research source, license, prompt, screenshot, font, and sample asset for redistribution rights.
 - [ ] Replace the illustrative clone URL and update all install links only after repository creation.

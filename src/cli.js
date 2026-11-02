@@ -27,7 +27,7 @@ function parseArgs(argv) {
 }
 
 function printHelp() {
-  console.log(`SlideForge AI Toolkit (working title)
+  console.log(`Agentic Slides
 
 Usage:
   node src/cli.js validate --input <presentation.json>
