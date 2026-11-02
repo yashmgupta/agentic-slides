@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "title": "AI Language Models: A Beginner's Guide",
+  "subtitle": "What they do, where they help, and how to use them carefully",
+  "audience": "Beginners",
+  "objective": "Explain the basic idea of a language model without suggesting that it understands or verifies every answer.",
+  "theme": {
+    "background": "#F8F8F3",
+    "foreground": "#202820",
+    "accent": "#26735E",
+    "muted": "#65736A",
+    "surface": "#FFFFFF",
+    "headingFont": "Aptos Display",
+    "bodyFont": "Aptos"
+  },
+  "slides": [
+    {
+      "type": "title",
+      "title": "How do language models work?",
+      "subtitle": "A beginner-friendly mental model",
+      "notes": "Invite learners to think of the model as a system that predicts text based on patterns in its context."
+    },
+    {
+      "type": "bullets",
+      "title": "Start with the text you provide",
+      "bullets": [
+        "A prompt gives the model context and a task",
+        "The model processes text as tokens",
+        "Its response is generated piece by piece"
+      ]
+    },
+    {
+      "type": "process",
+      "title": "A simplified generation loop",
+      "steps": ["Read context", "Estimate next token", "Add token to response", "Repeat until complete"],
+      "notes": "This is a simplified teaching diagram; actual systems include many additional components."
+    },
+    {
+      "type": "comparison",
+      "title": "Fluent does not always mean verified",
+      "left": {
+        "heading": "What fluency can do",
+        "items": ["Make explanations easier to read", "Help draft and reorganize text", "Suggest useful next questions"]
+      },
+      "right": {
+        "heading": "What still needs review",
+        "items": ["Check facts against reliable sources", "Review important calculations", "Protect private information"]
+      }
+    },
+    {
+      "type": "bullets",
+      "title": "Better context usually helps",
+      "bullets": [
+        "State the audience and goal",
+        "Provide relevant source material",
+        "Specify the format you need",
+        "Ask for uncertainty and sources to be identified"
+      ]
+    },
+    {
+      "type": "quote",
+      "title": "A useful habit",
+      "quote": "Treat a confident answer as a draft until the important claims are checked.",
+      "attribution": "Practical guidance for learners"
+    },
+    {
+      "type": "metric",
+      "title": "Remember the boundary",
+      "value": "Draft → Review",
+      "label": "Use generated content as a starting point for judgment"
+    },
+    {
+      "type": "closing",
+      "title": "Ask better questions",
+      "message": "Then verify what matters"
+    }
+  ]
+}

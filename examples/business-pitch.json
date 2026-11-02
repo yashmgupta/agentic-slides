@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "title": "Northstar: Local-First Team Insights",
+  "subtitle": "A privacy-conscious analytics workspace for small teams",
+  "audience": "Seed-stage investors",
+  "objective": "Explain the customer problem, product, market opportunity, business model, and funding plan.",
+  "theme": {
+    "background": "#F5F7FB",
+    "foreground": "#182338",
+    "accent": "#3657D6",
+    "muted": "#66738A",
+    "surface": "#FFFFFF",
+    "headingFont": "Aptos Display",
+    "bodyFont": "Aptos"
+  },
+  "slides": [
+    {
+      "type": "title",
+      "title": "Northstar",
+      "subtitle": "Local-first insights for teams that value their data",
+      "notes": "Opening: introduce the company and the privacy-first product thesis."
+    },
+    {
+      "type": "bullets",
+      "title": "Teams cannot act on scattered work",
+      "bullets": [
+        "Project updates live across too many tools",
+        "Managers spend hours assembling status reports",
+        "Small teams lack analyst support",
+        "Cloud exports can create privacy concerns"
+      ],
+      "notes": "Describe the workflow problem, not an unsupported market-wide statistic."
+    },
+    {
+      "type": "metric",
+      "title": "Start with a focused customer",
+      "value": "10–100",
+      "label": "person product and operations teams (initial target segment)",
+      "notes": "This range is a proposed customer profile for the example, not measured market research."
+    },
+    {
+      "type": "process",
+      "title": "From work signals to a weekly decision",
+      "steps": ["Connect approved sources", "Summarize team activity", "Review risks together", "Choose next actions"],
+      "notes": "The example workflow intentionally leaves integrations as a product concept, not an implemented feature."
+    },
+    {
+      "type": "comparison",
+      "title": "Why a local-first workflow?",
+      "left": {
+        "heading": "Typical reporting",
+        "items": ["Manual status gathering", "Repeated spreadsheet exports", "Sensitive context spread across tools"]
+      },
+      "right": {
+        "heading": "Northstar concept",
+        "items": ["One repeatable weekly review", "Clear summaries with source links", "Customer-controlled data boundary"]
+      },
+      "notes": "These are intended product positioning statements, not comparative test results."
+    },
+    {
+      "type": "bullets",
+      "title": "A small product with a clear first use",
+      "bullets": [
+        "Weekly status brief for one team",
+        "Open questions and blockers grouped by owner",
+        "Evidence links beside each generated summary"
+      ]
+    },
+    {
+      "type": "chart",
+      "title": "Illustrative annual plan mix",
+      "chart": {
+        "type": "bar",
+        "categories": ["Starter", "Team", "Business"],
+        "values": [60, 32, 8],
+        "seriesName": "Illustrative share",
+        "source": "Fictional example data for renderer testing"
+      },
+      "notes": "The values are synthetic and are only included to test chart output."
+    },
+    {
+      "type": "bullets",
+      "title": "A measured path to distribution",
+      "bullets": [
+        "Pilot with design partners",
+        "Publish an implementation guide",
+        "Partner with privacy-focused consultants"
+      ]
+    },
+    {
+      "type": "metric",
+      "title": "Funding would buy learning",
+      "value": "12 months",
+      "label": "proposed runway to validate retention and willingness to pay",
+      "notes": "Illustrative planning assumption only; not a fundraising recommendation."
+    },
+    {
+      "type": "closing",
+      "title": "Build a calmer weekly review",
+      "message": "Northstar — turn team signals into shared next steps"
+    }
+  ]
+}
