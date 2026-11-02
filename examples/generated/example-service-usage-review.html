@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstrate the data presentation layout with source data clearly labeled as synthetic.">
+  <title>Example Service Usage Review</title>
+  <style>
+    :root {
+      --background: #F5F7FB;
+      --foreground: #182338;
+      --accent: #A54435;
+      --muted: #66738A;
+      --surface: #FFFFFF;
+      --heading-font: "Aptos Display", "Aptos Display", sans-serif;
+      --body-font: "Aptos", "Aptos", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 2rem 1rem 5.5rem; background: #e9edf4; color: var(--foreground); font-family: var(--body-font); }
+    .slide { position: relative; width: min(94vw, 1280px, calc((100vh - 8rem) * 1.7778)); max-height: calc(100vh - 8rem); aspect-ratio: 16 / 9; overflow: hidden; padding: 6.5% 7%; background: var(--background); box-shadow: 0 24px 70px #17203324; }
+    .slide[hidden] { display: none; }
+    .topline { position: absolute; top: 5.7%; left: 7%; width: 4.5%; height: 5px; background: var(--accent); border-radius: 6px; }
+    h1, h2, h3 { font-family: var(--heading-font); }
+    h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1.08; letter-spacing: -.035em; }
+    h2 { margin: 1.5% 0 3%; font-size: clamp(1.7rem, 3.2vw, 2.8rem); line-height: 1.15; }
+    h3 { margin-top: 0; font-size: clamp(1.1rem, 2vw, 1.55rem); color: var(--accent); }
+    .content { height: 74%; display: flex; flex-direction: column; justify-content: center; font-size: clamp(1rem, 2vw, 1.65rem); }
+    .hero { text-align: center; }
+    .hero h1 { max-width: 13ch; margin: 0 auto; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 700; }
+    .subtitle, .attribution { color: var(--muted); font-size: clamp(1rem, 1.7vw, 1.4rem); text-align: center; }
+    ul { margin: 0; padding-left: 1.35em; }
+    li { padding: .32em 0; line-height: 1.35; }
+    li::marker { color: var(--accent); }
+    .metric { padding: 3rem 1rem; text-align: center; border-radius: 1.4rem; background: var(--surface); }
+    .metric strong { display: block; color: var(--accent); font: 700 clamp(3rem, 8vw, 6rem)/1 var(--heading-font); }
+    .metric p { color: var(--muted); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+    .steps li { min-height: 9rem; display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: 1rem; background: var(--surface); text-align: center; font-weight: 650; counter-increment: step; }
+    .steps li::before { content: counter(step, decimal-leading-zero); display: block; align-self: flex-start; margin-right: .55rem; color: var(--accent); font-size: .75rem; }
+    .chart-graphic { width: 100%; max-height: 82%; overflow: visible; }
+    .chart-graphic text { font-family: var(--body-font); }
+    .source { color: var(--muted); font-size: .75rem; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .comparison section { padding: 1.4rem; border-radius: 1rem; background: var(--surface); }
+    .comparison ul { font-size: .88em; }
+    blockquote { max-width: 22ch; margin: auto; text-align: center; font: 700 clamp(1.6rem, 3.4vw, 3rem)/1.2 var(--heading-font); }
+    .attribution { margin-top: 1.5rem; }
+    .notes { position: absolute; bottom: 8%; left: 7%; max-width: 75%; font-size: .72rem; color: var(--muted); }
+    .notes p { max-height: 4rem; overflow: auto; }
+    footer { position: absolute; bottom: 5%; right: 7%; left: 7%; display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .65rem; }
+    .controls { position: fixed; bottom: 1rem; left: 50%; display: flex; align-items: center; gap: .8rem; transform: translateX(-50%); padding: .45rem .7rem; border-radius: 999px; background: #172033; color: white; }
+    .controls button { border: 0; border-radius: 999px; padding: .55rem .85rem; background: #fff; color: #172033; font: inherit; cursor: pointer; }
+    .controls button:focus-visible { outline: 3px solid #87a7ff; outline-offset: 2px; }
+    #counter { min-width: 3rem; text-align: center; font-size: .85rem; }
+    @media (max-width: 680px) {
+      body { place-items: start center; padding: 1rem .5rem 5.5rem; }
+      .slide { width: 98vw; min-height: 70vh; max-height: none; aspect-ratio: auto; overflow: visible; padding: 2.5rem 1.25rem 1.5rem; }
+      .content { height: auto; min-height: 55vh; justify-content: flex-start; font-size: 1rem; }
+      .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+      h2 { font-size: clamp(1.3rem, 6vw, 1.9rem); }
+      .comparison { grid-template-columns: 1fr; gap: .6rem; }
+      .comparison section { padding: .8rem; }
+      .comparison ul { padding-left: 1rem; }
+      .notes { position: static; max-width: 100%; margin-top: 1rem; font-size: .8rem; }
+      footer { position: static; margin-top: 1.25rem; font-size: .7rem; }
+    }
+    @media print {
+      body { display: block; padding: 0; background: white; }
+      .slide, .slide[hidden] { display: block !important; width: 100vw; height: 56.25vw; max-height: 100vh; margin: 0; box-shadow: none; break-after: page; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main id="deck" aria-live="polite">
+    <article class="slide slide--title" aria-label="Slide 1 of 6" >
+      <div class="topline"></div>
+      
+      <div class="content"><div class="hero"><p class="eyebrow">Product and operations team</p>
+        <h1>Service Usage Review</h1>
+        <p class="subtitle">A six-slide example using synthetic data</p></div></div>
+      <details class="notes"><summary>Speaker notes</summary><p>All values in this deck are fictional test data.</p></details>
+      <footer><span>Example Service Usage Review</span><span>01 / 06</span></footer>
+    </article>
+<article class="slide slide--chart" aria-label="Slide 2 of 6" hidden>
+      <div class="topline"></div>
+      <h2>Monthly active teams</h2>
+      <div class="content"><svg class="chart-graphic" viewBox="0 0 1000 346" role="img" aria-label="Monthly active teams bar chart">
+    <g><text x="0" y="32" fill="#182338" font-size="16">Jan</text>
+      <rect x="260" y="10" width="33.970588235294116%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="61.970588235294116%" y="33" fill="#182338" font-size="15">42</text>
+<text x="0" y="94" fill="#182338" font-size="16">Feb</text>
+      <rect x="260" y="72" width="38.82352941176471%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="66.82352941176471%" y="95" fill="#182338" font-size="15">48</text>
+<text x="0" y="156" fill="#182338" font-size="16">Mar</text>
+      <rect x="260" y="134" width="38.01470588235294%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="66.01470588235294%" y="157" fill="#182338" font-size="15">47</text>
+<text x="0" y="218" fill="#182338" font-size="16">Apr</text>
+      <rect x="260" y="196" width="49.33823529411765%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="77.33823529411765%" y="219" fill="#182338" font-size="15">61</text>
+<text x="0" y="280" fill="#182338" font-size="16">May</text>
+      <rect x="260" y="258" width="55%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="83%" y="281" fill="#182338" font-size="15">68</text></g>
+  </svg><p class="source">Source: Synthetic example dataset</p></div>
+      
+      <footer><span>Example Service Usage Review</span><span>02 / 06</span></footer>
+    </article>
+<article class="slide slide--metric" aria-label="Slide 3 of 6" hidden>
+      <div class="topline"></div>
+      <h2>April to May change</h2>
+      <div class="content"><div class="metric"><strong>+11.5%</strong><p>Illustrative month-over-month change, computed from 61 to 68 teams</p></div></div>
+      <details class="notes"><summary>Speaker notes</summary><p>The percentage is a demonstration calculation: (68 - 61) / 61, rounded to one decimal.</p></details>
+      <footer><span>Example Service Usage Review</span><span>03 / 06</span></footer>
+    </article>
+<article class="slide slide--comparison" aria-label="Slide 4 of 6" hidden>
+      <div class="topline"></div>
+      <h2>What changed in the example?</h2>
+      <div class="content"><div class="comparison">
+        <section><h3>Earlier period</h3><ul><li>Fewer active teams</li><li>Usage concentrated in core workflow</li><li>Synthetic data only</li></ul></section>
+        <section><h3>Later period</h3><ul><li>Higher active-team count</li><li>More teams testing the workflow</li><li>No real customer inference</li></ul></section>
+      </div></div>
+      
+      <footer><span>Example Service Usage Review</span><span>04 / 06</span></footer>
+    </article>
+<article class="slide slide--chart" aria-label="Slide 5 of 6" hidden>
+      <div class="topline"></div>
+      <h2>Support requests by category</h2>
+      <div class="content"><svg class="chart-graphic" viewBox="0 0 1000 284" role="img" aria-label="Support requests by category bar chart">
+    <g><text x="0" y="32" fill="#182338" font-size="16">Setup</text>
+      <rect x="260" y="10" width="55%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="83%" y="33" fill="#182338" font-size="15">18</text>
+<text x="0" y="94" fill="#182338" font-size="16">Access</text>
+      <rect x="260" y="72" width="36.666666666666664%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="64.66666666666666%" y="95" fill="#182338" font-size="15">12</text>
+<text x="0" y="156" fill="#182338" font-size="16">Export</text>
+      <rect x="260" y="134" width="27.5%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="55.5%" y="157" fill="#182338" font-size="15">9</text>
+<text x="0" y="218" fill="#182338" font-size="16">Other</text>
+      <rect x="260" y="196" width="18.333333333333332%" height="34" rx="8" fill="#A54435"></rect>
+      <text x="46.33333333333333%" y="219" fill="#182338" font-size="15">6</text></g>
+  </svg><p class="source">Source: Synthetic example dataset</p></div>
+      
+      <footer><span>Example Service Usage Review</span><span>05 / 06</span></footer>
+    </article>
+<article class="slide slide--closing" aria-label="Slide 6 of 6" hidden>
+      <div class="topline"></div>
+      <h2>Review the data before acting</h2>
+      <div class="content"><div class="hero"><h1>Review the data before acting</h1><p class="subtitle">Check definitions, coverage, and the original source</p></div></div>
+      
+      <footer><span>Example Service Usage Review</span><span>06 / 06</span></footer>
+    </article>
+  </main>
+  <nav class="controls" aria-label="Presentation controls">
+    <button id="previous" type="button" aria-label="Previous slide">←</button>
+    <span id="counter" aria-live="polite">1 / 6</span>
+    <button id="next" type="button" aria-label="Next slide">→</button>
+  </nav>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const counter = document.getElementById('counter');
+      let current = 0;
+      function show(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, position) => {
+          slide.hidden = position !== current;
+        });
+        counter.textContent = (current + 1) + ' / ' + slides.length;
+      }
+      document.getElementById('previous').addEventListener('click', () => show(current - 1));
+      document.getElementById('next').addEventListener('click', () => show(current + 1));
+      document.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(current + 1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(current - 1); }
+        if (event.key === 'Home') show(0);
+        if (event.key === 'End') show(slides.length - 1);
+      });
+    })();
+  </script>
+</body>
+</html>

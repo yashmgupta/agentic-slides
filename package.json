@@ -1,0 +1,22 @@
+{
+  "name": "slideforge-ai-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local, schema-driven toolkit for editable PowerPoint and HTML presentations",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node src/cli.js validate",
+    "qa": "node src/cli.js qa",
+    "generate": "node src/cli.js generate",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1"
+  },
+  "devDependencies": {
+    "jszip": "^3.10.2"
+  }
+}

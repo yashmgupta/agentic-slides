@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "title": "Example Service Usage Review",
+  "subtitle": "Synthetic values for testing a chart-first deck",
+  "audience": "Product and operations team",
+  "objective": "Demonstrate the data presentation layout with source data clearly labeled as synthetic.",
+  "theme": {
+    "background": "#F5F7FB",
+    "foreground": "#182338",
+    "accent": "#A54435",
+    "muted": "#66738A",
+    "surface": "#FFFFFF",
+    "headingFont": "Aptos Display",
+    "bodyFont": "Aptos"
+  },
+  "slides": [
+    {
+      "type": "title",
+      "title": "Service Usage Review",
+      "subtitle": "A six-slide example using synthetic data",
+      "notes": "All values in this deck are fictional test data."
+    },
+    {
+      "type": "chart",
+      "title": "Monthly active teams",
+      "chart": {
+        "type": "bar",
+        "categories": ["Jan", "Feb", "Mar", "Apr", "May"],
+        "values": [42, 48, 47, 61, 68],
+        "seriesName": "Active teams",
+        "source": "Synthetic example dataset"
+      }
+    },
+    {
+      "type": "metric",
+      "title": "April to May change",
+      "value": "+11.5%",
+      "label": "Illustrative month-over-month change, computed from 61 to 68 teams",
+      "notes": "The percentage is a demonstration calculation: (68 - 61) / 61, rounded to one decimal."
+    },
+    {
+      "type": "comparison",
+      "title": "What changed in the example?",
+      "left": {
+        "heading": "Earlier period",
+        "items": ["Fewer active teams", "Usage concentrated in core workflow", "Synthetic data only"]
+      },
+      "right": {
+        "heading": "Later period",
+        "items": ["Higher active-team count", "More teams testing the workflow", "No real customer inference"]
+      }
+    },
+    {
+      "type": "chart",
+      "title": "Support requests by category",
+      "chart": {
+        "type": "bar",
+        "categories": ["Setup", "Access", "Export", "Other"],
+        "values": [18, 12, 9, 6],
+        "seriesName": "Requests",
+        "source": "Synthetic example dataset"
+      }
+    },
+    {
+      "type": "closing",
+      "title": "Review the data before acting",
+      "message": "Check definitions, coverage, and the original source"
+    }
+  ]
+}
