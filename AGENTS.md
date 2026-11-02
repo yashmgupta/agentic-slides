@@ -7,3 +7,7 @@
 - Do not silently invent facts, chart values, citations, or model capabilities.
 - Run `npm test` and generate all three examples after renderer/schema changes.
 - Keep AI generation optional; the documented structured-input path must continue to work without a model key.
+
+## Interactive intake
+
+When a user asks for a deck without full details, follow `prompts/interactive-intake.md`: ask the questions first, get outline approval, then write the JSON and run validate, qa, and generate.
