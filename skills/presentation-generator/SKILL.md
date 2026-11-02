@@ -1,6 +1,6 @@
 ---
 name: presentation-generator
-description: Create a concise slide outline or a valid SlideForge AI Toolkit JSON presentation specification from a brief and supplied evidence; use when asked for slides, a deck, or an editable PowerPoint/HTML presentation.
+description: Create a concise slide outline or a valid Agentic Slides JSON presentation specification from a brief and supplied evidence; use when asked for slides, a deck, or an editable PowerPoint/HTML presentation.
 ---
 
 # Presentation Generator

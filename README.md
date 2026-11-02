@@ -1,6 +1,5 @@
-# SlideForge AI Toolkit
+# Agentic Slides
 
-> **Working title only:** GitHub and npm searches found existing projects/packages using “SlideForge” and multiple repositories named “slideforge-ai.” This project has not been cleared for public branding. See [the name note](research/opportunity-analysis.md#name-and-public-release-status).
 
 A small, local-first toolkit that turns a structured JSON presentation into an **editable PowerPoint deck** and a **standalone HTML presentation**. Use an AI assistant to draft the JSON if you want, or write it yourself. The renderer makes no model calls and requires no API key.
 
@@ -47,7 +46,7 @@ The pitch and chart values are fictional examples for renderer testing; do not t
 
 This is a scope comparison based on project documentation, **not an output-quality benchmark**.
 
-| Approach | Emphasis in source documentation | SlideForge AI Toolkit MVP |
+| Approach | Emphasis in source documentation | Agentic Slides MVP |
 |---|---|---|
 | [Presentation Forge](https://github.com/Deepnar/presentation-forge) | AI-assisted structured content with deterministic layout and visual review | No model/runtime; JSON-to-PPTX and HTML, with basic structural checks |
 | [ppt-agent](https://github.com/Liyilin66/ppt-agent) | Research/source retrieval, citations, and numeric validation | No retrieval or fact-checking; user supplies/validates content |
@@ -84,7 +83,6 @@ The JSON contract and renderer are model-independent. Chat interfaces may suppor
 - Quality checks are heuristics, not rendered text measurements or aesthetic judgments.
 - Fonts/rendering can differ across PowerPoint, LibreOffice, and browsers. Inspect outputs in the applications you plan to use.
 - Research metadata is a snapshot (2026-11-02); stars and repository timestamps change.
-- The “SlideForge AI” name is not cleared for publication. Rename and recheck relevant trademark, package, and repository names before release.
 
 ## License and credits
 

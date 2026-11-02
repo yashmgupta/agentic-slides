@@ -203,10 +203,10 @@ export async function renderPptx(spec, outputPath) {
   const theme = getTheme(spec);
   const pptx = new pptxgen();
   pptx.layout = 'LAYOUT_WIDE';
-  pptx.author = spec.author ?? 'SlideForge AI Toolkit';
+  pptx.author = spec.author ?? 'Agentic Slides';
   pptx.subject = spec.objective ?? 'Generated from a structured presentation specification';
   pptx.title = spec.title;
-  pptx.company = 'SlideForge AI Toolkit';
+  pptx.company = 'Agentic Slides';
   pptx.lang = 'en-US';
   pptx.theme = {
     headFontFace: theme.headingFont,

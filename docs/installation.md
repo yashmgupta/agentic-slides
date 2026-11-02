@@ -12,8 +12,8 @@ No model API key, database, Docker daemon, paid subscription, or internet access
 ## Setup
 
 ```bash
-git clone <your-fork-or-repository-url>
-cd slideforge-ai
+git clone https://github.com/yashmgupta/agentic-slides
+cd agentic-slides
 npm install
 npm test
 ```

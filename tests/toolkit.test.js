@@ -82,7 +82,7 @@ test('CLI exposes help without requiring a subcommand', () => {
 });
 
 test('all sample decks export readable PPTX packages and standalone HTML', async () => {
-  const directory = await mkdtemp(path.join(os.tmpdir(), 'slideforge-test-'));
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'agentic-slides-test-'));
   try {
     for (const [file, count, expectedCharts] of [
       ['business-pitch.json', 10, [['60', '32', '8']]],
