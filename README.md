@@ -55,6 +55,17 @@ This is a scope comparison based on project documentation, **not an output-quali
 
 No same-brief comparison was run; this project makes no superiority claim. More evidence is in [the research landscape](research/repository-landscape.md), [deep analysis](research/deep-analysis.md), and [opportunity analysis](research/opportunity-analysis.md).
 
+## Quick start: let the AI interview you first
+
+Don't want to write a long prompt? Use the interactive prompt. The AI asks a few simple questions (topic, audience, slide count, style, colors, fonts, tone, speaker notes), shows you an outline to approve, and only then creates the presentation file.
+
+1. Open [`prompts/interactive-intake.md`](prompts/interactive-intake.md) and copy the text block into ChatGPT, Claude, Gemini, or any assistant.
+2. Answer the questions (say "you choose" for anything you don't care about).
+3. Approve the outline, then save the JSON it gives you as `my-deck.json`.
+4. Run `node src/cli.js generate --input my-deck.json --out out` to get an editable PowerPoint and an HTML deck.
+
+Using a coding agent (Copilot, Claude Code, Codex) inside this repo? Say: "Follow prompts/interactive-intake.md, ask me the questions first, then generate the deck." Chat-only assistants cannot run the commands, so you run step 4 yourself.
+
 ## Copyable AI workflow
 
 1. Copy [`prompts/master-presentation-prompt.md`](prompts/master-presentation-prompt.md) into ChatGPT, Claude, Gemini, or another assistant.
